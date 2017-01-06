@@ -6,7 +6,7 @@ MAINTAINER Konstantin Kozhin <konstantin@profitco.ru>
 LABEL Description="This image contains Ruby language" Vendor="ProfitCo" Version="1.0"
 
 # Set environment variables
-ENV RUBY_VERSION 2.3.2
+ENV RUBY_VERSION 2.4.0
 
 # Update package repository
 RUN apt-get update -y
