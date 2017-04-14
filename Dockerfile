@@ -12,7 +12,7 @@ ENV RUBY_VERSION 2.4.1
 RUN apt-get update -y
 
 # Install required packages
-RUN apt-get install build-essential git wget curl vim openssl libssl-dev libedit-dev zlib1g-dev libffi-dev libpq-dev libmysqlclient-dev libsqlite3-dev imagemagick sudo -y
+RUN apt-get install build-essential git wget curl vim openssl libssl-dev libedit-dev zlib1g-dev libffi-dev libpq-dev libmysqlclient-dev libsqlite3-dev libcurl4-openssl-dev imagemagick libpcre3 libpcre3-dev unzip sudo -y
 
 # Install rbenv
 RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv \
