@@ -9,15 +9,16 @@ LABEL Description="This image contains Ruby language" Vendor="ProfitCo" Version=
 ENV RUBY_VERSION 2.4.1
 
 # Install packages
-RUN apt-get update && apt-get install build-essential git wget curl vim libssl-dev libreadline-dev zlib1g-dev libffi-dev libpq-dev libsqlite3-dev -y
+RUN apt-get update && apt-get install git vim curl wget build-essential libssl-dev libreadline-dev zlib1g-dev -y
+# removed libffi-dev libpq-dev libsqlite3-dev
 
 # Set working directory
 WORKDIR /root
 
 # Install Vim colors
-RUN mkdir -p ./.vim/colors
-COPY vim/.vimrc ./
-COPY vim/monokai.vim ./.vim/colors
+RUN mkdir -p ~/.vim/colors
+COPY vim/.vimrc ~/
+COPY vim/monokai.vim ~/.vim/colors
 
 # Install rbenv
 RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv \
