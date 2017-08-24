@@ -16,9 +16,9 @@ RUN apt-get update && apt-get install git vim curl wget build-essential libssl-d
 WORKDIR /root
 
 # Install Vim colors
-RUN mkdir -p ~/.vim/colors
-COPY vim/.vimrc ~/
-COPY vim/monokai.vim ~/.vim/colors
+RUN mkdir -p ./.vim/colors
+COPY vim/.vimrc ./
+COPY vim/monokai.vim ./.vim/colors
 
 # Install rbenv
 RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv \
