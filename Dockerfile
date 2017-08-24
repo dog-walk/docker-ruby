@@ -11,6 +11,14 @@ ENV RUBY_VERSION 2.4.1
 # Install packages
 RUN apt-get update && apt-get install build-essential git wget curl vim libssl-dev libreadline-dev zlib1g-dev libffi-dev libpq-dev libsqlite3-dev -y
 
+# Set working directory
+WORKDIR /root
+
+# Install Vim colors
+RUN mkdir -p ./.vim/colors
+COPY vim/.vimrc ./
+COPY vim/monokai.vim ./.vim/colors
+
 # Install rbenv
 RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv \
  && git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build \
