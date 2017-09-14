@@ -6,11 +6,11 @@ MAINTAINER Konstantin Kozhin <konstantin@profitco.ru>
 LABEL Description="This image contains Ruby language" Vendor="ProfitCo" Version="1.0"
 
 # Set environment variables
-ENV RUBY_VERSION 2.4.1
+ENV RUBY_VERSION 2.4.2
 
 # Install packages
 RUN apt-get update && apt-get install git vim curl wget build-essential libssl-dev libreadline-dev zlib1g-dev -y
-# removed libffi-dev libpq-dev libsqlite3-dev
+# removed libffi-dev
 
 # Set working directory
 WORKDIR /root
