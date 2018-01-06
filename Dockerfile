@@ -2,15 +2,16 @@
 FROM debian:latest
 
 # Set maintainer and image indo
-MAINTAINER Konstantin Kozhin <konstantin@profitco.ru>
-LABEL Description="This image contains Ruby language" Vendor="ProfitCo" Version="1.0"
+LABEL Description="This image contains Ruby language" \
+      Vendor="CodedRed" \
+      Version="1.0" \
+      Maintainer="Konstantin Kozhin <konstantin@codedred.com>"
 
 # Set environment variables
-ENV RUBY_VERSION 2.4.3
+ENV RUBY_VERSION 2.5.0
 
 # Install packages
 RUN apt-get update && apt-get install git vim curl wget build-essential libssl-dev libreadline-dev zlib1g-dev -y
-# removed libffi-dev
 
 # Set working directory
 WORKDIR /root
