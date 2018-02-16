@@ -11,7 +11,7 @@ LABEL Description="This image contains Ruby language" \
 ENV RUBY_VERSION 2.5.0
 
 # Install packages
-RUN apt-get update && apt-get install git vim curl wget build-essential libssl-dev libreadline-dev zlib1g-dev -y
+RUN apt-get update && apt-get install git vim curl wget autoconf build-essential libssl-dev libreadline-dev zlib1g-dev -y
 
 # Set working directory
 WORKDIR /root
